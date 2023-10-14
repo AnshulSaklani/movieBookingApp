@@ -86,7 +86,7 @@ let movies = [
 	},
 	{
 		name: "2018", image: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fe/2018movie.jpg/220px-2018movie.jpg", rating: 9.3, votes: 1023,
-		format: ["2D"], genre: ["Drama", "Thriller"], languages: ["Malyalam","Telugu", "Tamil", "Hindi"], release: "26 May, 2023", cast: ["Tovino Thomas", "Kunchacko Boban"],
+		format: ["2D"], genre: ["Drama", "Thriller"], languages: ["Malayalam","Telugu", "Tamil", "Hindi"], release: "26 May, 2023", cast: ["Tovino Thomas", "Kunchacko Boban"],
 		about: "A thriller set in the backdrop of 2018 Kerala Floods. It unfolds the lives of people from all walks of life who faced catastrophic consequences and the collective efforts put in by the brave people to survive the calamity."
 	},
 	{
@@ -126,4 +126,50 @@ let movies = [
 	},
 ]
 
-module.exports.movies = movies;
+let movieHalls = [
+	{
+		name: "PVR Cinemas", 
+		slots: [
+		 {time: "09:30 AM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"},{amount: 500.00, type: "Recliners"}], ticketsBooked: ["O1", "O2", "O5","O6","N5", "N6", "N9", "N16", "M5","M8", "M19", "L8", "K18","K14", "K3", "K7", "J2", "J6", "J5", "J20", "H17", "G3", "G5", "G6","G7","G8", "G23", "G24", "D14", "D15", "D16", "D18", "D19","B1","B2","B3","B4","B8","B15","B16","B18","B19","B20","A1","A2","A10","A11","A12","A15"]},
+		 {time: "12:30 PM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"}], ticketsBooked: ["N5", "N6", "N9","N10", "N11","N12","N13", "N19", "M5","M8", "M19", "M20", "L5", "L9", "L10","L11","L12", "K18","K14", "K3", "K21", "J2", "J6", "J5", "J20", "H17", "G3", "G5", "G6","G7","G8", "G23", "G24","E1","E21","E22","E23","E24", "D12","D13","D14", "D15", "D16", "D18", "D19","B1","B2","B13","B14","B9","B18","B19","B20","A1","A12","A9","A19","A21","A22"]},
+		 {time: "06:30 PM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"}], ticketsBooked: ["N7", "N11","N12","N13", "N19", "M5","M8","L5", "L9", "L10","L11","L12", "K18","K14", "K3", "K21", "J2", "J6", "J5", "J20", "H17", "G3", "G5", "G6","G7","G8", "G23", "G24","E1","E21","E22","E23","E24", "D12","D13","D14", "D15", "D16", "D18", "D19","C1","C2","C4","C9","C21","C22","B1","B2","B13","B14","B9","B18","B19","B20"]}
+		]
+	},
+	{
+		name: "INOX Cinemas", slots: [
+			{time: "09:30 AM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"},{amount: 500.00, type: "Recliners"}], ticketsBooked: ["O1", "O2", "O3","O4","N5", "N6", "N9", "N12", "M5","M8", "M13", "M14", "M15", "M19", "L8", "K18","K14", "K3", "K7", "I2", "I6", "I5", "I20", "H17", "G3", "G5", "G6","G7","G8", "G23", "E4", "D14", "D15", "D16", "C18", "C19","B1","B2","B3","B5","B6","B8","B9","B21","A21","A5"]},
+			{time: "06:30 PM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"}], ticketsBooked: ["N7", "N11","N12","N13", "N19", "N20","N21","N22","N23","N24", "M5","M8", "M12","M13", "M14", "L5", "L9", "L10","L11","L12", "K18","K14", "K3", "K21", "J2", "J6", "J5", "J20", "H17", "G3", "G5", "G6","G7","G8", "G23", "G24","F2","F3","F4", "F5", "F16", "F18", "F19","E1","E21","E22","E23","E24","C1","C2","C4","C9","C21","C22","B1","B2","B13","B14","B9","B18","B19","B20"]}
+		]
+	},
+	{
+		name: "Cinepolis", slots: [
+			{time: "09:30 AM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"}],ticketsBooked: ["N5", "N6", "N9","N10", "N11","N12","N13", "N19", "M5","M8", "M19", "M20", "L5", "L9", "L10","L11","L12", "K18","K14", "K3", "K21", "J2", "J6", "J5", "J20", "H17", "G3", "G5", "G6","G7","G8", "G23", "G24","E1","E21","E22","E23","E24", "D12","D13","D14", "D15", "D16", "D18", "D19","B1","B2","B13","B14","B9","B18","B19","B20","A1","A12","A9","A19","A21","A22"]},
+			{time: "11:30 AM", booking: [{amount: 300.00, type: "Classic"},{amount: 500.00, type: "Recliners"}],ticketsBooked: ["O5", "O6", "O9","O10", "O11","O12","O13", "L5", "L9", "L10","L11","L12", "K18","K14", "K3", "K21", "J2", "J6", "J5", "J20", "H17", "G3", "G5", "G6","G7","G8", "G23", "G24","E1","E21","E22","E23","E24", "D12","D13","D14", "D15", "D16", "D18", "D19","B1","B2","B13","B14","B9","B18","B19","B20","A1","A12","A9","A19","A21","A22"]},
+			{time: "02:00 PM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"}],ticketsBooked: ["N14", "N16", "N19","N20", "N21","N22","N23", "M6","M7", "M8", "M9","K8","K14", "K15", "K16", "J12", "J16", "J17", "J20","G3", "G5", "G6","G7","G8", "G23", "G24","E1","E2","E22","D1","D13","D14", "D15", "D16", "D18", "D19","B1","B2","B13","B14","B9","B18","B19","B20","A1","A12","A9","A19","A21","A22"]},
+			{time: "05:00 PM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"}, {amount: 500.00, type: "Recliners"}],ticketsBooked: ["N5", "N6", "N9","N10", "N11","N12","N13", "N19", "M5","M8", "M19", "M20", "L5", "L9", "L10","L11","L12", "K18","K14", "K3", "K21", "J2", "J6", "J5", "J20", "H17", "G3", "G5", "G6","G7","G8", "G23", "G24","E1","E21","E22","E23","E24", "D12","D13","D14", "D15", "D16", "D18", "D19","B1","B2","B13","B14","B9","B18","B19","B20","A1","A12","A9","A19","A21","A22"]},
+			{time: "07:00 PM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"},{amount: 500.00, type: "Recliners"}],ticketsBooked: ["N5", "N6", "N9", "N16", "M5","M8", "M19", "L8", "K18","K14", "K3", "K7", "J2", "J6", "J5", "J20", "H19","H20","H21","H22","H23","H24", "G3", "G5", "G6","G7","G8", "E23", "E24","D10","D11","D12","D13", "D14", "D15", "D16", "D18", "D19","B1","B2","B3","B4","B8","B15","B16","A1","A2","A10","A11","A12","A15"]},
+			{time: "09:00 PM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"}],ticketsBooked: ["N9", "N14", "N17","N22","M5", "L5", "L9", "L10","L11","L12", "K18","K14", "K23", "K24", "J2", "J6", "J5", "J20","G6","G7","G8", "G23", "G24","E1","E21","E22","E23","E24", "D12","D13","D14", "D15", "D16", "D18", "D19","B1","B2","B13","B14","B9","B18","B19","B20","A1","A12","A9","A19","A21","A22"]},
+		] 
+	},
+	{
+		name: "SPI Cinemas", slots: [
+			{time: "09:30 AM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"}], ticketsBooked: ["N1","N2","N3", "M5","M8", "M12","M13", "M4", "L5", "L9", "L10","L11","L12", "K18","K14", "K3", "K21", "J2", "J6", "J5", "J20", "H17", "G3", "G5", "G24","F2","F3","F4", "F5", "F16", "F18", "F19","E1","E21","E22","E23","E24","C1","C2","C4","C9","B20"]},
+			{time: "12:00 PM", booking: [{amount: 300.00, type: "Classic"},{amount: 500.00, type: "Recliners"}], ticketsBooked: ["02","O3","O24", "L5", "L11","L12","L13", "K18","K14", "K3", "K21", "J2", "J6", "J5", "J20", "H3", "H5", "H6","H17","H18", "H23", "H24","F2","F3","F4", "F13", "F16", "F18", "F19","F20","F21","F22","E1","E21","E22","E23","E24","C1","C2","C4","C9","C21","C22","B1","B2","B13","B14","B9","B18","B19","B20", "A2","A3","A4","A8","A9","A10","A11","A12","A13","A18","A19"]},
+			{time: "03:00 PM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"}, {amount: 500.00, type: "Recliners"}], ticketsBooked: ["O1", "O12", "O15","N5", "N6", "N9", "N16", "M15","M16", "M17", "L8", "K18","K14", "K3", "K7", "J2", "J6", "J5", "J20", "H8","H9","H10", "G3", "G5", "G6","G7","G8", "G23", "G24", "F14", "F15", "E16", "D8", "D9","B1","B2","B3","B4","B8","B15","B16","B18","B19","B20","A1","A2","A10","A11","A12","A15"]},
+			{time: "09:00 PM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"}, {amount: 500.00, type: "Recliners"}], ticketsBooked: ["O3","O6","O7", "O9","O11","O16","N5", "N6", "N9", "N16", "M5","M8", "L8", "K18","K14", "K3", "K7", "J2", "J6", "J5", "J20", "H17", "H23", "H24", "D14", "D15", "D16", "D18", "D19","C1","C2","C5","C16","C18","C20","B20","A1","A2","A10","A21","A22","A24"]},
+		] 
+	},
+	{
+		name: "Mirag Cinemas", slots: [
+			{time: "09:30 AM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"}], ticketsBooked: ["N20","N21","N22","N23","N24", "M5","M23", "M14", "L5", "L9", "L10","L11","L12", "K19", "J2", "J6", "H5", "H2", "H7", "G3", "G5", "G6", "G23", "G24","F12","F13","F14", "F15", "F16", "F18", "F19","D1","D2","D4","C9","C21","C22","A1","A2","A13","A14","A9","A18","A19","A20"]},
+			{time: "06:30 PM", booking: [{amount: 200.00, type: "Classic"},{amount: 300.00, type: "Prime"}], ticketsBooked: ["N7", "N11","N12","N13", "N19", "N20","N21","N2","N3","N4", "M16","M8", "M12","M13", "M14", "L5", "L9", "L10","L11","L12", "K18","K14", "K3", "K21", "J2", "J6", "J5", "J20", "H17", "G13", "G24", "G6","G7","G8", "G23", "G24","F2","F3","F4", "F5", "F22", "F23", "F19","E1","E21","E22","E23","E24","C1","C2","C4","C9","C21","C22","B1","B2","B3","B4","B8","B19","B20"]}
+		] 
+	},
+]
+
+let users = [
+	{id: 1, name: "James", mail: "test@test.com", password: "test123", mobNumber: "", booking: []},
+	{id: 2, name: "Alex", mail: "user@user.com", password: "user123", mobNumber: "", booking: []}
+]
+
+module.exports = { movies, movieHalls, users };
